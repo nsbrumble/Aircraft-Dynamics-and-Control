@@ -1,0 +1,79 @@
+%% Boeing 737 Performance Analysis
+close all; clear variables; clc;
+%% Background
+% This script will hold all of the calculations necessary in order to
+% analyze the flight performance of the Boeing 737 aircraft. This section
+% includes preliminary calculations that will aid in determining the
+% performance parameters.
+
+% Known parameters
+g = 9.81;
+R = 287;
+T_sl = 288.16;
+a1 = -6.5;
+rho_sl = 1.225;
+gamma = 1.4;
+
+% Cruise conditions
+Mach = 0.785;
+h_ft = 35000;
+h = h_ft*0.0003048;
+T = T_sl+a1*h;
+rho = rho_sl*(T/T_sl)^(-1-g/(a1*10^-3*R));
+mu = 1.8*10^-5;
+
+a = sqrt(gamma*R*T);       % Local speed of sound in m/s
+V = a*Mach;                % Airspeed in m/s
+Q = .5*rho*V^2;            % Dynamic Pressure in Pa
+
+% Physical Measurements of Boeing 737
+b = 33.4;
+S = 140.8;                 % Planform Area in m^2
+C = S/b;                   % Airfoil chord length in m
+AR = b^2/S;                % Wing Aspect Ratio
+W_lb = 90710;              % Weight of aircraft in lb
+W = W_lb*4.44;             % Weight of aircraft in N
+
+% Flow and Aerodynamic Forces
+Re = rho*V*C/mu;           % Reynolds number of flight
+cd = 1;                    % Drag coefficient from XFLR5
+cl = 1;                    % Lift coefficient from XFLR5               
+k = 
+cD0 = 
+
+
+
+
+
+
+
+
+
+%% Thrust Required at Cruise Conditions
+% Cruise conditions imply that the aircraft is flying steadily at constant
+% altitude. 
+
+
+Lift_Drag = cl/cd;      % Lift to drag ratio
+Thrust = W/Lift_Drag;   % Thrust required to maintain cruise conditions in N
+
+fprintf('Thrust Required = %g [N]',Thrust)
+
+
+
+%% Glide Range
+
+%% Absolute and Service Ceiling
+
+%% Minimum Turning Radius
+
+%% Characteristic Airspeeds
+
+%% Range
+% Range quantifies how far an aircraft can fly without having to refuel. 
+
+TSFC = 4;               % Thrust specific fuel consumption
+
+
+%% Functions
+
